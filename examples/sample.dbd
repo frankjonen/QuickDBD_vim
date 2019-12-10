@@ -1,0 +1,68 @@
+# The stuff below is mostly what you get when you
+# join http://quickdatabasediagrams.com
+# I made some additions to show and test syntax
+# highlighting and folding features
+#
+# --------------- There it is. ------------------------
+#
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+# Fwsngk! <- Spellchecking is enabled for comments
+# 
+# Notes: Notes! Within comments!
+# Description: Take a guess?
+
+
+Customer
+-
+CustomerID PK int
+Name string INDEX
+Address1 string
+Address2 NULL string
+Address3 NULL string
+
+Order
+-
+OrderID PK int
+CustomerID int FK  -   Customer.CustomerID
+#
+# Notes: Array for easy testing purposes only.
+#        Don't actually do this.
+#
+CustomerID int FK  -<  Customer.CustomerID
+CustomerID int FK >-<  Customer.CustomerID
+CustomerID int FK >-   Customer.CustomerID
+CustomerID int FK -0   Customer.CustomerID #comment
+CustomerID int FK  0-  Customer.CustomerID
+CustomerID int FK 0-0  Customer.CustomerID
+CustomerID int FK -0<  Customer.CustomerID
+CustomerID int FK >0-  Customer.CustomerID
+#
+#
+TotalAmount money
+OrderStatusID int FK >- os.OrderStatusID
+
+
+OrderLine as ol
+----
+
+OrderLineID PK int
+OrderID int FK >- Order.OrderID
+ProductID int FK >- p.ProductID
+Quantity int
+
+# Table documentation comment 1 (try the PDF/RTF export)
+Product as p # Table documentation comment 2
+------------
+ProductID PK int
+# Field documentation comment 1
+# Field documentation comment 2 
+Name varchar(200) UNIQUE # Field documentation comment 3
+Price money
+
+OrderStatus as os
+----
+OrderStatusID PK int
+Name UNIQUE string
+
