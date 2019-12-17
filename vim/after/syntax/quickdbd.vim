@@ -19,6 +19,11 @@
 " hi dbRefDot           
 " hi dbRefCol           
 " hi dbRefTable         
+
+" hi dbQuotes           
+" hi dbRefTableQuoted   
+" hi dbColQuoted        
+
 " hi dbNull             
 " hi dbChar             
 " hi dbCharValue        

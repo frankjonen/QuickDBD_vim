@@ -48,7 +48,7 @@ OrderLine as ol
 ----
 
 OrderLineID PK int
-OrderID int FK >- Order.OrderID
+OrderID int FK >- "Order Set"."Order ID" 
 ProductID int FK >- p.ProductID
 Quantity int
 

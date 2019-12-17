@@ -16,6 +16,9 @@ syn match    dbRefTable         "\w*\(\.\)\@="
 syn match    dbRefDot           "\." 
 syn match    dbRefCol           "\w\(\.\w*\)\@<="
 
+syn match    dbQuotes           "\"\(\w\)\@=\|\"\(\w\)\@!"
+syn match    dbColQuoted        "\(\.\"\)\w.*\"" contains=dbQuotes,dbRefDot
+syn match    dbRefTableQuoted   "\"\(.*\)\"\(\.\)\@=" contains=dbQuotes
 
 syn match    dbTableHead        "^.*$\n-.*$" contains=dbComment,dbAlias
 syn match    dbParens           "(\|)" 
@@ -55,10 +58,16 @@ hi def link  dbComment          Comment
 hi def link  dbCommentNotes     VimCommentTitle
 hi def link  dbTableHead        Label
 hi def link  dbAlias            Define
+
 hi def link  dbRel              Define
 hi def link  dbRefDot           Include
 hi def link  dbRefCol           Identifier
 hi def link  dbRefTable         Label
+
+hi def link  dbQuotes           String
+hi def link  dbRefTableQuoted   Label
+hi def link  dbColQuoted        Identifier
+
 hi def link  dbNull             Special
 hi def link  dbChar             Typedef
 hi def link  dbCharValue        Number
