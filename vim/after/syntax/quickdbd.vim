@@ -14,7 +14,7 @@
 " hi dbPrimKey          
 " hi dbForKey           
 " hi dbComment          
-" hi dbCommentNotes     
+" hi dbCommentTitle     
 " hi dbTableHead        
 " hi dbAlias            
 " hi dbRel              

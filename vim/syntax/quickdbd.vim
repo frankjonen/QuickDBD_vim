@@ -8,9 +8,8 @@ if exists("b:current_syntax")
 endif
 
 
-syn match    dbCommentNotes     "Notes\:."       skipwhite
-syn match    dbCommentNotes     "Description\:." skipwhite
-syn match    dbComment          "#.*$"           contains=dbCommentNotes,@Spell
+syn match    dbCommentTitle     "\#\s\zs\w.*\:\(\s\w\)\@="
+syn match    dbComment          "#.*$"           contains=dbCommentTitle,@Spell
 
 syn match    dbRefTable         "\w*\(\.\)\@="
 syn match    dbRefDot           "\." 
@@ -57,7 +56,7 @@ hi def link  dbString           Type
 hi def link  dbPrimKey          Boolean
 hi def link  dbForKey           Boolean
 hi def link  dbComment          Comment
-hi def link  dbCommentNotes     VimCommentTitle
+hi def link  dbCommentTitle     VimCommentTitle
 hi def link  dbTableHead        Label
 hi def link  dbAlias            Define
 
