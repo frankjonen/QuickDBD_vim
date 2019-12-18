@@ -35,6 +35,7 @@ syn match    dbJoinMarker_1zm   "\s\zs-0<\ze\s"
 syn match    dbJoinMarker_zm1   "\s\zs>0-\ze\s"
 
 syn keyword  dbInt              int
+syn keyword  dbfloat            float
 syn keyword  dbString           string
 syn keyword  dbPrimKey          PK
 syn keyword  dbForKey           FK
@@ -50,6 +51,7 @@ syn region   dbTable start="^--*$\n" end="\n\(\w.*$\n-\)\@=" fold keepend extend
 let b:current_syntax = "qdb"
 
 hi def link  dbInt              Type
+hi def link  dbFloat            Type
 hi def link  dbFinance          Type
 hi def link  dbString           Type
 hi def link  dbPrimKey          Boolean
