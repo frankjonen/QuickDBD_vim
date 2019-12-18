@@ -7,6 +7,7 @@
 " Here's the whole set: 
 " -----------------------
 " hi dbInt              
+" hi dbFloat            
 " hi dbFinance          
 " hi dbString           
 " hi dbPrimKey          
