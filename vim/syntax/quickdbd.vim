@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 
-syn match    dbCommentTitle     "\#\s\zs\w.*\:\(\s\w\)\@="
+syn match    dbCommentTitle     "\#\s\zs\w.*\:\(\s*\w\)\@="
 syn match    dbComment          "#.*$"           contains=dbCommentTitle,@Spell
 
 syn match    dbRefTable         "\w*\(\.\)\@="
